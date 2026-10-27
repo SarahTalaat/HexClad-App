@@ -105,7 +105,7 @@ fun RecipeScreen(
                 cookTime = "8 min",
                 servings = "4 Servings",
                 difficulty = "Medium",
-                imageUrl = "https://hexclad.com/cdn/shop/files/Steak_Recipe.jpg",
+                imageUrl = "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=80",
                 description = "Deep golden caramelized crust sealed with high heat, basted with rosemary, crushed garlic cloves, and chilled unsalted French butter.",
                 ingredients = listOf(
                     "2 lbs Prime Bavette or Flank Steak",
@@ -124,7 +124,7 @@ fun RecipeScreen(
                 cookTime = "60 min",
                 servings = "6 Servings",
                 difficulty = "Advanced",
-                imageUrl = "https://hexclad.com/cdn/shop/files/Soup_Recipe.jpg",
+                imageUrl = "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=80",
                 description = "Slowly caramelized yellow onions reduced with dry white wine and rich beef bone stock, broiled under a molten mantle of cave-aged Gruyère.",
                 ingredients = listOf(
                     "5 lbs Yellow Onions, thinly sliced",
@@ -143,7 +143,7 @@ fun RecipeScreen(
                 cookTime = "10 min",
                 servings = "2 Servings",
                 difficulty = "Easy",
-                imageUrl = "https://hexclad.com/cdn/shop/files/Salmon_Recipe.jpg",
+                imageUrl = "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=1000&q=80",
                 description = "Glass-shattering crispy skin created by pressing salmon fillets into our laser-etched matrix with zero oil splattering or sticking.",
                 ingredients = listOf(
                     "2 King Salmon fillets (skin-on, scale-free)",
@@ -162,7 +162,7 @@ fun RecipeScreen(
                 cookTime = "6 min",
                 servings = "2 Servings",
                 difficulty = "Medium",
-                imageUrl = "https://hexclad.com/cdn/shop/files/Egg_Recipe.jpg",
+                imageUrl = "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=1000&q=80",
                 description = "Silky layered Japanese omelet rolled effortlessly in the rectangular nonstick valleys with sweet mirin and savory dashi.",
                 ingredients = listOf(
                     "4 Large Pasture-Raised Eggs",
@@ -181,7 +181,7 @@ fun RecipeScreen(
                 cookTime = "18 min",
                 servings = "4 Servings",
                 difficulty = "Easy",
-                imageUrl = "https://hexclad.com/cdn/shop/files/Cookie_Recipe.jpg",
+                imageUrl = "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=1000&q=80",
                 description = "Crispy chewy caramelized edges with a gooey molten chocolate fudge center, baked directly in the oven at 375°F.",
                 ingredients = listOf(
                     "1 cup All-Purpose Flour",

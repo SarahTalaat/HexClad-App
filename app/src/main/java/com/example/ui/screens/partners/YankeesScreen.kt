@@ -118,7 +118,7 @@ fun YankeesScreen(
             ) {
                 AsyncImage(
                     model = ImageRequest.Builder(LocalContext.current)
-                        .data("https://hexclad.com/cdn/shop/files/Yankees_Stadium_Hero.jpg")
+                        .data("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1000&q=80")
                         .crossfade(true)
                         .build(),
                     contentDescription = "Yankee Stadium Hospitality",

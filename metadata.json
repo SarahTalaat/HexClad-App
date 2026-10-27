@@ -1,5 +1,5 @@
 {
-  "name": "HexClad Cookware",
+  "name": "HexClad",
   "description": "Luxury hybrid cookware and kitchen essentials inspired by HexClad.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]

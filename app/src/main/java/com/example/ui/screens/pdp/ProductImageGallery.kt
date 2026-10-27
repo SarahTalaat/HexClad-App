@@ -56,9 +56,9 @@ fun ProductImageGallery(
     // Fallback if empty
     val images = if (imageUrls.isEmpty()) {
         listOf(
-            "https://hexclad.com/cdn/shop/files/JapaneseEggPan_Hero.jpg",
-            "https://hexclad.com/cdn/shop/files/JapaneseEggPan_InUse.jpg",
-            "https://hexclad.com/cdn/shop/files/JapaneseEggPan_Detail.jpg"
+            "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1000&q=80"
         )
     } else {
         imageUrls

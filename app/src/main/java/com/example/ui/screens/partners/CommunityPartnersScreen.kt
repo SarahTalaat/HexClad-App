@@ -31,7 +31,6 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Surface
@@ -55,15 +54,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
+import com.example.ui.components.VideoPlayerDialog
 import com.example.ui.theme.HexCladTheme
 
 /**
- * Community Partners Screen (Prompt 45)
- *
- * Showcases:
- * 1. Food For Soul (Massimo Bottura's global non-profit combating food waste and social vulnerability)
- * 2. Little Kitchen Academy (Montessori-inspired culinary academy empowering kids ages 3-18+)
- * Includes video banners, mission breakdowns, partnership badges, and impact statistics.
+ * Community Partners Screen (Prompt 45) with Interactive Video Playback
  */
 @Composable
 fun CommunityPartnersScreen(
@@ -72,6 +67,7 @@ fun CommunityPartnersScreen(
     modifier: Modifier = Modifier
 ) {
     var selectedPartnerTab by remember { mutableStateOf("ALL") }
+    var activePlayingVideo by remember { mutableStateOf<Triple<String, String, String>?>(null) }
 
     LazyColumn(
         modifier = modifier
@@ -206,7 +202,9 @@ fun CommunityPartnersScreen(
             item {
                 Spacer(modifier = Modifier.height(16.dp))
                 FoodForSoulSection(
-                    onLearnMore = onExploreCookware
+                    onPlayVideo = { title, subtitle, thumb ->
+                        activePlayingVideo = Triple(title, subtitle, thumb)
+                    }
                 )
             }
         }
@@ -216,7 +214,9 @@ fun CommunityPartnersScreen(
             item {
                 Spacer(modifier = Modifier.height(28.dp))
                 LittleKitchenAcademySection(
-                    onExploreCookware = onExploreCookware
+                    onPlayVideo = { title, subtitle, thumb ->
+                        activePlayingVideo = Triple(title, subtitle, thumb)
+                    }
                 )
             }
         }
@@ -287,18 +287,28 @@ fun CommunityPartnersScreen(
             }
         }
     }
+
+    // Video Player Modal
+    activePlayingVideo?.let { (title, subtitle, thumb) ->
+        VideoPlayerDialog(
+            videoTitle = title,
+            creatorOrSubtitle = subtitle,
+            thumbnailUrl = thumb,
+            onDismiss = { activePlayingVideo = null }
+        )
+    }
 }
 
 @Composable
 fun FoodForSoulSection(
-    onLearnMore: () -> Unit
+    onPlayVideo: (String, String, String) -> Unit
 ) {
+    val thumbUrl = "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1000&q=80"
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp)
     ) {
-        // Partnership Badge
         Surface(
             color = HexCladTheme.colors.charcoalSurfaceVariant,
             shape = RoundedCornerShape(4.dp),
@@ -340,7 +350,7 @@ fun FoodForSoulSection(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Simulated Video Banner
+        // Playable Video Banner Card
         Card(
             shape = RoundedCornerShape(10.dp),
             colors = CardDefaults.cardColors(containerColor = HexCladTheme.colors.charcoalCard),
@@ -348,11 +358,19 @@ fun FoodForSoulSection(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(200.dp)
+                .clickable {
+                    onPlayVideo(
+                        "The Refettorio Revolution: Transforming Surplus Food Into Dignity",
+                        "Food For Soul Partnership • Chef Massimo Bottura",
+                        thumbUrl
+                    )
+                }
+                .testTag("food_for_soul_video_banner")
         ) {
             Box(modifier = Modifier.fillMaxSize()) {
                 AsyncImage(
                     model = ImageRequest.Builder(LocalContext.current)
-                        .data("https://hexclad.com/cdn/shop/files/FoodForSoul_Refettorio.jpg")
+                        .data(thumbUrl)
                         .crossfade(true)
                         .build(),
                     contentDescription = "Food For Soul Refettorio Kitchen",
@@ -360,7 +378,6 @@ fun FoodForSoulSection(
                     modifier = Modifier.fillMaxSize()
                 )
 
-                // Dark Gradient Scrim
                 Box(
                     modifier = Modifier
                         .fillMaxSize()
@@ -371,7 +388,6 @@ fun FoodForSoulSection(
                         )
                 )
 
-                // Center Play Icon
                 Surface(
                     color = HexCladTheme.colors.metallicWarmGold,
                     shape = CircleShape,
@@ -381,13 +397,12 @@ fun FoodForSoulSection(
                 ) {
                     Icon(
                         imageVector = Icons.Default.PlayArrow,
-                        contentDescription = "Watch Mission Video",
+                        contentDescription = "Play Video",
                         tint = HexCladTheme.colors.deepCharcoal,
                         modifier = Modifier.padding(12.dp)
                     )
                 }
 
-                // Video Label
                 Column(
                     modifier = Modifier
                         .align(Alignment.BottomStart)
@@ -409,7 +424,6 @@ fun FoodForSoulSection(
 
         Spacer(modifier = Modifier.height(14.dp))
 
-        // Chef Bottura Quote
         Surface(
             color = HexCladTheme.colors.charcoalCard,
             shape = RoundedCornerShape(8.dp),
@@ -440,7 +454,6 @@ fun FoodForSoulSection(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Key Impact Metrics
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(10.dp)
@@ -466,14 +479,14 @@ fun FoodForSoulSection(
 
 @Composable
 fun LittleKitchenAcademySection(
-    onExploreCookware: () -> Unit
+    onPlayVideo: (String, String, String) -> Unit
 ) {
+    val thumbUrl = "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1000&q=80"
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp)
     ) {
-        // Partnership Badge
         Surface(
             color = HexCladTheme.colors.charcoalSurfaceVariant,
             shape = RoundedCornerShape(4.dp),
@@ -515,7 +528,7 @@ fun LittleKitchenAcademySection(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Simulated Academy Video Banner
+        // Playable Academy Video Banner Card
         Card(
             shape = RoundedCornerShape(10.dp),
             colors = CardDefaults.cardColors(containerColor = HexCladTheme.colors.charcoalCard),
@@ -523,11 +536,19 @@ fun LittleKitchenAcademySection(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(200.dp)
+                .clickable {
+                    onPlayVideo(
+                        "Independence Through Cooking: How Kids Master Healthy Life Skills",
+                        "Little Kitchen Academy Partnership • Ages 3-18+",
+                        thumbUrl
+                    )
+                }
+                .testTag("lka_video_banner")
         ) {
             Box(modifier = Modifier.fillMaxSize()) {
                 AsyncImage(
                     model = ImageRequest.Builder(LocalContext.current)
-                        .data("https://hexclad.com/cdn/shop/files/LKA_Classroom_Kids.jpg")
+                        .data(thumbUrl)
                         .crossfade(true)
                         .build(),
                     contentDescription = "Little Kitchen Academy Students Cooking with HexClad",
@@ -535,7 +556,6 @@ fun LittleKitchenAcademySection(
                     modifier = Modifier.fillMaxSize()
                 )
 
-                // Dark Gradient Scrim
                 Box(
                     modifier = Modifier
                         .fillMaxSize()
@@ -546,7 +566,6 @@ fun LittleKitchenAcademySection(
                         )
                 )
 
-                // Center Play Icon
                 Surface(
                     color = HexCladTheme.colors.pureWhite,
                     shape = CircleShape,
@@ -556,13 +575,12 @@ fun LittleKitchenAcademySection(
                 ) {
                     Icon(
                         imageVector = Icons.Default.PlayArrow,
-                        contentDescription = "Watch LKA Video",
+                        contentDescription = "Play Video",
                         tint = HexCladTheme.colors.deepCharcoal,
                         modifier = Modifier.padding(12.dp)
                     )
                 }
 
-                // Video Label
                 Column(
                     modifier = Modifier
                         .align(Alignment.BottomStart)
@@ -584,7 +602,6 @@ fun LittleKitchenAcademySection(
 
         Spacer(modifier = Modifier.height(14.dp))
 
-        // Academy Philosophy Card
         Surface(
             color = HexCladTheme.colors.charcoalCard,
             shape = RoundedCornerShape(8.dp),
@@ -618,7 +635,6 @@ fun LittleKitchenAcademySection(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Key LKA Metrics
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(10.dp)

@@ -1,6 +1,5 @@
 package com.example.ui.screens.pdp
 
-import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -29,6 +28,10 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -42,6 +45,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
+import com.example.ui.components.VideoPlayerDialog
 import com.example.ui.theme.HexCladTheme
 
 data class UgcVideo(
@@ -53,15 +57,13 @@ data class UgcVideo(
 )
 
 /**
- * User UGC Video Reels Carousel:
- * "The Secret's Out! (More Than a Million of You Love Us!)"
- * featuring play button overlays, tall video aspect cards, and verified culinary previews.
+ * User UGC Video Reels Carousel with interactive video playback modal.
  */
 @Composable
 fun UgcVideoReels(
     modifier: Modifier = Modifier
 ) {
-    val context = LocalContext.current
+    var activePlayingVideo by remember { mutableStateOf<UgcVideo?>(null) }
 
     val reels = listOf(
         UgcVideo(
@@ -69,28 +71,28 @@ fun UgcVideoReels(
             creatorHandle = "@chef_marcus_sears",
             recipeTitle = "Crispy Skin Salmon Test",
             viewCount = "2.4M",
-            thumbnail = "https://hexclad.com/cdn/shop/files/UGC_Salmon.jpg"
+            thumbnail = "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=1000&q=80"
         ),
         UgcVideo(
             id = "ugc-2",
             creatorHandle = "@homecook_sara",
             recipeTitle = "Zero-Oil Egg Slide Challenge",
             viewCount = "1.8M",
-            thumbnail = "https://hexclad.com/cdn/shop/files/UGC_Eggs.jpg"
+            thumbnail = "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=1000&q=80"
         ),
         UgcVideo(
             id = "ugc-3",
             creatorHandle = "@bbq_pitmaster_dan",
             recipeTitle = "Dry-Aged Ribeye Stovetop Sear",
             viewCount = "3.1M",
-            thumbnail = "https://hexclad.com/cdn/shop/files/UGC_Steak.jpg"
+            thumbnail = "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=80"
         ),
         UgcVideo(
             id = "ugc-4",
             creatorHandle = "@pastalover_julia",
             recipeTitle = "Truffle Cacio e Pepe in 12\" Pan",
             viewCount = "980K",
-            thumbnail = "https://hexclad.com/cdn/shop/files/UGC_Pasta.jpg"
+            thumbnail = "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1000&q=80"
         )
     )
 
@@ -135,20 +137,13 @@ fun UgcVideoReels(
                     modifier = Modifier
                         .width(160.dp)
                         .height(240.dp)
-                        .clickable {
-                            Toast.makeText(
-                                context,
-                                "Playing: ${reel.recipeTitle} by ${reel.creatorHandle}",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
+                        .clickable { activePlayingVideo = reel }
                         .testTag("reel_${reel.id}"),
                     colors = CardDefaults.cardColors(containerColor = HexCladTheme.colors.charcoalCard),
                     shape = RoundedCornerShape(10.dp),
                     border = BorderStroke(1.dp, HexCladTheme.colors.charcoalBorder)
                 ) {
                     Box(modifier = Modifier.fillMaxSize()) {
-                        // Thumbnail background
                         AsyncImage(
                             model = ImageRequest.Builder(LocalContext.current)
                                 .data(reel.thumbnail)
@@ -159,7 +154,6 @@ fun UgcVideoReels(
                             modifier = Modifier.fillMaxSize()
                         )
 
-                        // Dark Gradient Scrim
                         Box(
                             modifier = Modifier
                                 .fillMaxSize()
@@ -174,7 +168,6 @@ fun UgcVideoReels(
                                 )
                         )
 
-                        // Play Button Overlay
                         Box(
                             modifier = Modifier
                                 .size(46.dp)
@@ -191,7 +184,6 @@ fun UgcVideoReels(
                             )
                         }
 
-                        // View Count Badge (Top-End)
                         Surface(
                             color = HexCladTheme.colors.deepCharcoal.copy(alpha = 0.7f),
                             shape = RoundedCornerShape(4.dp),
@@ -219,7 +211,6 @@ fun UgcVideoReels(
                             }
                         }
 
-                        // Bottom Info: Recipe & Creator
                         Column(
                             modifier = Modifier
                                 .align(Alignment.BottomStart)
@@ -243,5 +234,15 @@ fun UgcVideoReels(
                 }
             }
         }
+    }
+
+    // Interactive Video Player Modal when tapped
+    activePlayingVideo?.let { video ->
+        VideoPlayerDialog(
+            videoTitle = video.recipeTitle,
+            creatorOrSubtitle = "Creator: ${video.creatorHandle} • ${video.viewCount} Views",
+            thumbnailUrl = video.thumbnail,
+            onDismiss = { activePlayingVideo = null }
+        )
     }
 }

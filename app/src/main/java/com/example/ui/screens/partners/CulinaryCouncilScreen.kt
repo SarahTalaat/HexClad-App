@@ -104,7 +104,7 @@ fun CulinaryCouncilScreen(
                 accolade = "17 Michelin Stars Worldwide",
                 restaurants = "Restaurant Gordon Ramsay (London), Hell's Kitchen, Lucky Cat",
                 favoriteCookware = "12\" Hybrid Stainless Fry Pan & Hybrid Wok",
-                imageUrl = "https://hexclad.com/cdn/shop/files/Gordon_Chef.jpg",
+                imageUrl = "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1000&q=80",
                 quote = "HexClad is the Rolls Royce of pans. I use them in my home and in my restaurants across the world.",
                 bio = "Internationally renowned multi-Michelin-starred chef, restaurateur, and television personality. Gordon Ramsay joined HexClad as a lead partner after discovering the pans in his personal California home kitchen. Today he leads HexClad's culinary product development and testing."
             ),
@@ -115,7 +115,7 @@ fun CulinaryCouncilScreen(
                 accolade = "3 Michelin Stars (Core by Clare Smyth)",
                 restaurants = "Core by Clare Smyth (London), Oncore (Sydney)",
                 favoriteCookware = "Hybrid Japanese Egg Pan & 8QT Dutch Oven",
-                imageUrl = "https://hexclad.com/cdn/shop/files/Clare_Chef.jpg",
+                imageUrl = "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=1000&q=80",
                 quote = "Precision is everything in haute cuisine. HexClad gives me total thermal control without delicate proteins catching or burning.",
                 bio = "Clare Smyth is the first and only British female chef to hold three Michelin stars in the UK. Renowned for celebrating sustainable British agricultural produce, Chef Smyth insists on cookware that withstands high-volume commercial service with effortless cleanup."
             ),
@@ -126,7 +126,7 @@ fun CulinaryCouncilScreen(
                 accolade = "James Beard Outstanding Chef & Julia Child Award",
                 restaurants = "Osteria Mozza, Pizzeria Mozza, chi SPACCA (Los Angeles)",
                 favoriteCookware = "Commercial Pizza Steel & Double Burner Griddle",
-                imageUrl = "https://hexclad.com/cdn/shop/files/Nancy_Chef.jpg",
+                imageUrl = "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=80",
                 quote = "Baking artisan crusts demands rapid heat transference. HexClad's heavy aluminum tri-ply core delivers flawless crust blisters every time.",
                 bio = "Legendary baker, restaurateur, and author who revolutionized artisan sourdough bread and wood-fired pizza in the United States. Winner of the James Beard Outstanding Chef award and star of Netflix's Chef's Table."
             ),
@@ -137,7 +137,7 @@ fun CulinaryCouncilScreen(
                 accolade = "Gourmet Traveller Chef of the Year",
                 restaurants = "Momofuku Seiōbo (Sydney)",
                 favoriteCookware = "Hybrid Deep Sauté Pan with Lid",
-                imageUrl = "https://hexclad.com/cdn/shop/files/Paul_Chef.jpg",
+                imageUrl = "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1000&q=80",
                 quote = "Caribbean braises and curries need deep caramelization and steady gentle simmering. HexClad transitions seamlessly between both worlds.",
                 bio = "A visionary chef celebrated for elevating Caribbean cuisine to global fine-dining prominence. Formerly executive chef at Momofuku Má Pêche in NYC and Momofuku Seiōbo in Australia."
             ),
@@ -148,7 +148,7 @@ fun CulinaryCouncilScreen(
                 accolade = "3 Michelin Stars & World's 50 Best #1",
                 restaurants = "Osteria Francescana (Modena, Italy), Torno Subito",
                 favoriteCookware = "Hybrid Roasting Pan & Damascus Steel Knives",
-                imageUrl = "https://hexclad.com/cdn/shop/files/Massimo_Chef.jpg",
+                imageUrl = "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1000&q=80",
                 quote = "Cooking is an act of love and scientific alchemy. HexClad honors traditional Italian culinary heritage through modern laser engineering.",
                 bio = "Culinary maestro whose Modena restaurant Osteria Francescana was twice named the best restaurant in the world. Massimo combines contemporary modern art with deeply rooted Italian culinary traditions."
             )

@@ -22,7 +22,7 @@ object MockDataProvider {
             name = "HexClad Cookware Care & Seasoning Wax",
             price = 24.00,
             originalPrice = 30.00,
-            imageUrl = "https://hexclad.com/cdn/shop/files/CareWax_1.jpg",
+            imageUrl = "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=80",
             description = "Natural beeswax and mineral oil blend for perpetual seasoning and mirror gloss."
         ),
         AddOn(
@@ -30,7 +30,7 @@ object MockDataProvider {
             name = "Pro-Grade Silicone Edge Stainless Turner",
             price = 29.00,
             originalPrice = 39.00,
-            imageUrl = "https://hexclad.com/cdn/shop/files/Spatula_1.jpg",
+            imageUrl = "https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=1000&q=80",
             description = "Flexible high-heat silicone edge rated to 550°F with sturdy steel core."
         ),
         AddOn(
@@ -38,7 +38,7 @@ object MockDataProvider {
             name = "Tempered Glass Lid Cleaner & Stainless Polish",
             price = 19.00,
             originalPrice = 25.00,
-            imageUrl = "https://hexclad.com/cdn/shop/files/Polish_1.jpg",
+            imageUrl = "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1000&q=80",
             description = "Specialized streak-free formula for laser-etched stainless steel."
         )
     )
@@ -57,9 +57,9 @@ object MockDataProvider {
             rating = 4.9,
             reviewCount = 1840,
             imageUrls = listOf(
-                "https://hexclad.com/cdn/shop/files/JapaneseEggPan_Hero.jpg",
-                "https://hexclad.com/cdn/shop/files/JapaneseEggPan_InUse.jpg",
-                "https://hexclad.com/cdn/shop/files/JapaneseEggPan_Detail.jpg"
+                "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=1000&q=80"
             ),
             entryCount = 556,
             variants = listOf(
@@ -86,9 +86,9 @@ object MockDataProvider {
             rating = 4.9,
             reviewCount = 28940,
             imageUrls = listOf(
-                "https://hexclad.com/cdn/shop/files/6pc_FryPanSet_Hero.jpg",
-                "https://hexclad.com/cdn/shop/files/6pc_FryPanSet_Grid.jpg",
-                "https://hexclad.com/cdn/shop/files/6pc_FryPanSet_Gordon.jpg"
+                "https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1000&q=80"
             ),
             entryCount = 299,
             variants = listOf(
@@ -115,8 +115,8 @@ object MockDataProvider {
             rating = 4.8,
             reviewCount = 3420,
             imageUrls = listOf(
-                "https://hexclad.com/cdn/shop/files/RicePot_Hero.jpg",
-                "https://hexclad.com/cdn/shop/files/RicePot_Interior.jpg"
+                "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=80"
             ),
             entryCount = 750,
             variants = listOf(
@@ -152,8 +152,8 @@ object MockDataProvider {
             rating = 4.9,
             reviewCount = 5810,
             imageUrls = listOf(
-                "https://hexclad.com/cdn/shop/files/DoubleGriddle_Hero.jpg",
-                "https://hexclad.com/cdn/shop/files/DoubleGriddle_Action.jpg"
+                "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1584948059750-6d4590cc32b3?auto=format&fit=crop&w=1000&q=80"
             ),
             entryCount = 880,
             variants = listOf(
@@ -180,8 +180,8 @@ object MockDataProvider {
             rating = 4.9,
             reviewCount = 31200,
             imageUrls = listOf(
-                "https://hexclad.com/cdn/shop/files/13pc_Set_Hero.jpg",
-                "https://hexclad.com/cdn/shop/files/13pc_Set_Cooktop.jpg"
+                "https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=80"
             ),
             entryCount = 1400,
             variants = listOf(
@@ -208,7 +208,7 @@ object MockDataProvider {
             rating = 4.9,
             reviewCount = 8120,
             imageUrls = listOf(
-                "https://hexclad.com/cdn/shop/files/Damascus_Knife_Hero.jpg"
+                "https://images.unsplash.com/photo-1593618998160-e34014e67546?auto=format&fit=crop&w=1000&q=80"
             ),
             entryCount = 450,
             variants = listOf(
@@ -235,7 +235,7 @@ object MockDataProvider {
             rating = 4.8,
             reviewCount = 2940,
             imageUrls = listOf(
-                "https://hexclad.com/cdn/shop/files/Roaster_Hero.jpg"
+                "https://images.unsplash.com/photo-1584948059750-6d4590cc32b3?auto=format&fit=crop&w=1000&q=80"
             ),
             entryCount = 620,
             variants = listOf(
@@ -262,7 +262,7 @@ object MockDataProvider {
             rating = 4.9,
             reviewCount = 6120,
             imageUrls = listOf(
-                "https://hexclad.com/cdn/shop/files/HexMills_Hero.jpg"
+                "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1000&q=80"
             ),
             entryCount = 500,
             variants = listOf(
@@ -289,7 +289,7 @@ object MockDataProvider {
             rating = 4.9,
             reviewCount = 2150,
             imageUrls = listOf(
-                "https://hexclad.com/cdn/shop/files/PizzaSteel_Hero.jpg"
+                "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1000&q=80"
             ),
             entryCount = 450,
             variants = listOf(
@@ -316,7 +316,7 @@ object MockDataProvider {
             rating = 4.8,
             reviewCount = 3780,
             imageUrls = listOf(
-                "https://hexclad.com/cdn/shop/files/BBQPan_Hero.jpg"
+                "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=80"
             ),
             entryCount = 520,
             variants = listOf(
@@ -343,7 +343,7 @@ object MockDataProvider {
             rating = 4.9,
             reviewCount = 11420,
             imageUrls = listOf(
-                "https://hexclad.com/cdn/shop/files/Wok_Hero.jpg"
+                "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1000&q=80"
             ),
             entryCount = 530,
             variants = listOf(
@@ -370,7 +370,7 @@ object MockDataProvider {
             rating = 4.9,
             reviewCount = 8920,
             imageUrls = listOf(
-                "https://hexclad.com/cdn/shop/files/DutchOven_Hero.jpg"
+                "https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=1000&q=80"
             ),
             entryCount = 680,
             variants = listOf(
